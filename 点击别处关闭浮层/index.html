@@ -12,13 +12,27 @@
             position: absolute;
         }
         .two{
-            height: 100px;
+            height: 30px;
             width: 100px;
-            background-color: rgba(122,122,45,0.5);
+            background-color: rgb(122,122,45);
+            border-radius: 2px;
             display: none;
             position: relative;
-            top: 100%;
-            right: 0;
+            top: 50%;
+            left: 110%;
+        }
+        .two::before{
+            content:'';
+            display: block;
+            box-sizing: border-box;
+            width: 10px;
+            height: 10px;
+            border: 5px solid transparent;
+            border-right: 5px solid rgba(122,122,45);
+            border-bottom: 5px solid rgb(122,122,45);
+            position: relative;
+            top: 17px;
+            left:-9px;
         }
         
     </style>
@@ -26,6 +40,7 @@
 </head>
 <body>
     <div class="one">
+        点我
         <div class="two">
             <input type="checkbox" name="选项卡" id="check">
         </div>
