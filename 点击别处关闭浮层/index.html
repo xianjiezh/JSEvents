@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .one{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+        }
+        .two{
+            height: 100px;
+            width: 100px;
+            background-color: rgba(122,122,45,0.5);
+            display: none;
+            position: relative;
+            top: 100%;
+            right: 0;
+        }
+        
+    </style>
+    <title>点击别处关闭浮层</title>
+</head>
+<body>
+    <div class="one">
+        <div class="two">
+            <input type="checkbox" name="选项卡" id="check">
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
