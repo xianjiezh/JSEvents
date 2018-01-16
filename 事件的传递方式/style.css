@@ -1,0 +1,17 @@
+.grandFa{
+    height: 400px;
+    width: 400px;
+    border: 1px solid black;
+}
+.father{
+    width: 200px;
+    height: 200px;
+    margin: 100px;
+    border: 1px solid green;
+}
+.son{
+    width: 100px;
+    height: 100px;
+    margin: 50px;
+    border: 1px solid red;
+}
