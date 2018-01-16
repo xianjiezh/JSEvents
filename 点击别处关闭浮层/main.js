@@ -3,7 +3,6 @@ let two = document.getElementsByClassName('two')[0]
 let check = document.getElementById('check')
 one.addEventListener('click',function(e){
     
-    e.target.stopPropagation = true
     if(e.target !== check && e.target !== two){
         if(two.style.display == 'block'){
             two.style.display = 'none'
