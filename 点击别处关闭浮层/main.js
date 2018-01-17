@@ -22,3 +22,6 @@ one.addEventListener('click', function (e) {
         }
     }
 })
+/* todo 
+用原生代码实现jquery的one
+*/
