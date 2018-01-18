@@ -7,28 +7,25 @@ one.addEventListener('click', function (e) {
             two.style.display = 'none'
         } else {
             two.style.display = 'block'
-            // 在浮层出现时监听，节约资源
             listenToDocument()
         }
     }
 })
-/* todo 
-用原生代码实现jquery的one
-*/
-function once(dom, event, callback) {
-    var handle = function () {
-        callback();
-        dom.removeEventListener(event, handle);
-    }
-    dom.addEventListener(event, handle)
-} 
+
 function listenToDocument(){
     document.addEventListener('click', function (e) {
         if (e.target === document.documentElement) {
-            console.log('once')
             two.style.display = 'none'
+            // 只在浮层出现时监听，节约资源
             document.removeEventListener('click',arguments.callee)
         }
-        
     })
+}
+
+
+function toggeleClass(target, className){
+    //todo
+}
+Node.prototype.once = function(eventType, callback){
+    // todo
 }
