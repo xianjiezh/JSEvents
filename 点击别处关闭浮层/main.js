@@ -9,15 +9,12 @@ one.addEventListener('click', function (e) {
             two.style.display = 'block'
             // 在浮层出现时监听，节约资源
             document.addEventListener('click', function (e) {
-                console.log('document')
-                event.target.removeEventListener(event.type, arguments.callee);
-                function callback(e) {
-                    if (e.target === document.documentElement) {
-                        two.style.display = 'none'
-                    }
+                if (e.target === document.documentElement) {
+                    console.log('once')
+                    two.style.display = 'none'
+                    document.removeEventListener('click',arguments.callee)
                 }
-                return callback(e)
-
+                
             })
         }
     }
@@ -25,3 +22,10 @@ one.addEventListener('click', function (e) {
 /* todo 
 用原生代码实现jquery的one
 */
+function once(dom, event, callback) {
+    var handle = function () {
+        callback();
+        dom.removeEventListener(event, handle);
+    }
+    dom.addEventListener(event, handle)
+} 
