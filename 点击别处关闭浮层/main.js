@@ -8,14 +8,7 @@ one.addEventListener('click', function (e) {
         } else {
             two.style.display = 'block'
             // 在浮层出现时监听，节约资源
-            document.addEventListener('click', function (e) {
-                if (e.target === document.documentElement) {
-                    console.log('once')
-                    two.style.display = 'none'
-                    document.removeEventListener('click',arguments.callee)
-                }
-                
-            })
+            listenToDocument()
         }
     }
 })
@@ -29,3 +22,13 @@ function once(dom, event, callback) {
     }
     dom.addEventListener(event, handle)
 } 
+function listenToDocument(){
+    document.addEventListener('click', function (e) {
+        if (e.target === document.documentElement) {
+            console.log('once')
+            two.style.display = 'none'
+            document.removeEventListener('click',arguments.callee)
+        }
+        
+    })
+}
